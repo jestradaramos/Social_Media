@@ -24,8 +24,17 @@ permissions to get this up and running.
 to want to do is rename that file to ```mykeys```. And inside that file you will find
 some sections. Fill in the appropriate elements in each section. 
 2) GMAIL and PWD are for your email and password for a gmail account in order to 
-actually send emails via SMTP.
+actually send emails via SMTP.  
 3)FB_KEY is the key you get from facebook in order to use their api. And Group ID is 
 ID of the facebook group that you want to post to. You can use online tools to find 
 the group ID of the page you want to  post to. 
 4) TW_KEY and TW_S_KEY are the keys provided by twitter in order to access their API.
+
+## First Run
+For the first use, if you are all set up, just running the program will be fine. You
+will get a pop-up asking for permission from twitter. But you will not need that after
+the first run. So, in market.sh, you can just comment out line 27 to ignore the twitter
+authorization. 
+
+# How to Use
+Just run ```./market.sh``` and follow the steps. 

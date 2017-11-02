@@ -24,7 +24,7 @@ echo $TAK
 echo $TSK
 
 # This only needs to be done once
-#python3 auth_tweet.py $TAK $TSK
+python3 auth_tweet.py $TAK $TSK
 
 TAT=`sed -n '7p' < mykeys | cut -d ":" -f 2`
 TAS=`sed -n '8p' < mykeys | cut -d ":" -f 2`
