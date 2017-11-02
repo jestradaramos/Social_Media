@@ -20,6 +20,7 @@ parser = argparse.ArgumentParser(description='This is meant to send out emails, 
 parser.add_argument("sender", help="Enter the Gmail account you want to send from")
 parser.add_argument("pwd" , help="Enter password for the gmail account")
 parser.add_argument("to" , help="Enter Email Alias")
+parser.add_argument("sub", help="Subject of email goes here")
 parser.add_argument("message", help="Enter your message here") # Will do string for now but then file
 
 args = parser.parse_args()
@@ -27,8 +28,14 @@ args = parser.parse_args()
 
 msg_format = "From: %s\r\nTo: %s\r\nSubject: %s\r\n\r\n%s"
 
+print("Processing Email")
 
+with open(args.message, 'r') as msg:
+	message = msg.read()
 
+with open(args.sub,'r') as sub:
+	subject = sub.read()
+protocol = msg_format%(args.sender, args.to, subject, message)
 an_email = email(args.sender , args.pwd)
-an_email.send(args.to, args.message)
-
+an_email.send(args.to, protocol)
+print("Done")
